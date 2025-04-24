@@ -16,19 +16,27 @@
             height: 100vh;
         }
         .container {
-            background: rgba(4, 131, 235, 0.664);
+            background: linear-gradient(135deg, #0d47a1, #1976d2, #42a5f5);
             padding: 2rem;
             border-radius: 1rem;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            box-shadow: 0 0 20px #42a5f5, 0 0 30px #1976d2 inset;
             text-align: center;
             width: 100%;
             max-width: 500px;
+            box-sizing: border-box;
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
+            border: 1px solid #64b5f6;
         }
         input {
             width: 100%;
             padding: 1rem;
             margin: 1rem 0;
             font-size: 1rem;
+            box-sizing: border-box;
+            border-radius: 0.5rem;
+            border: 1px solid #ccc;
         }
         button {
             padding: 0.8rem 2rem;
@@ -37,16 +45,28 @@
             border: none;
             border-radius: 0.5rem;
             cursor: pointer;
+            box-sizing: border-box;
         }
         #resposta {
             margin-top: 1.5rem;
             font-weight: bold;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 1rem 1.5rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            color: #333;
+            text-align: center;
+            min-height: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 3px solid #0077cc;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>🔌 EletroIA</h1>
+        <h1>🔌 ⚡ EletroIA</h1>
         <p>Descreva o problema elétrico e receba sugestões técnicas!</p>
         <input id="pergunta" placeholder="Ex: A luz da sala não acende">
         <button onclick="enviarPergunta()">Perguntar</button>
