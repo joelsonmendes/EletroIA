@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EletroIA - Assistente Virtual</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f0f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            text-align: center;
+            width: 100%;
+            max-width: 500px;
+        }
+        input {
+            width: 100%;
+            padding: 1rem;
+            margin: 1rem 0;
+            font-size: 1rem;
+        }
+        button {
+            padding: 0.8rem 2rem;
+            background-color: #0077cc;
+            color: white;
+            border: none;
+            border-radius: 0.5rem;
+            cursor: pointer;
+        }
+        #resposta {
+            margin-top: 1.5rem;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔌 EletroIA</h1>
+        <p>Descreva o problema elétrico e receba sugestões técnicas!</p>
+        <input id="pergunta" placeholder="Ex: A luz da sala não acende">
+        <button onclick="enviarPergunta()">Perguntar</button>
+        <div id="resposta"></div>
+    </div>
+
+    <script>
+        function enviarPergunta() {
+            let pergunta = document.getElementById("pergunta").value.toLowerCase();
+            let resposta = "";
+
+            if (pergunta.includes("luz") && pergunta.includes("nao acende")) {
+                resposta = "Verifique se a lâmpada está queimada ou se há disjuntor desarmado.";
+            } else if (pergunta.includes("tomada") && pergunta.includes("sem energia")) {
+                resposta = "Pode ser um fio solto ou disjuntor desligado. Verifique com um multímetro.";
+            } else if (pergunta.includes("disjuntor") && pergunta.includes("desarma")) {
+                resposta = "Pode haver curto-circuito ou sobrecarga. Revise os circuitos ligados.";
+            } else {
+                resposta = "Desculpe, não entendi o problema. Tente descrever de outra forma.";
+            }
+
+            document.getElementById("resposta").innerText = resposta;
+        }
+    </script>
+</body>
+</html>
